@@ -3,8 +3,11 @@ import 'package:provider_example/example1/example1.dart';
 
 import 'package:provider/provider.dart';
 import 'package:provider_example/example2/list_example.dart';
+import 'package:provider_example/example2/list_example2.dart';
+import 'package:provider_example/example_server/example_server.dart';
 import 'package:provider_example/providers/counter_provider.dart';
 import 'package:provider_example/providers/list_provider.dart';
+import 'package:provider_example/providers/server_provider.dart';
 import 'package:provider_example/providers/shopping_card_provider.dart';
 
 void main() {
@@ -25,6 +28,7 @@ class project_providers extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => Counter()),
       ChangeNotifierProvider(create: (_) => ShoppingCard()),
       ChangeNotifierProvider(create: (_) => ListProvider()),
+      ChangeNotifierProvider(create: (_) => ServerProvider()),
     ], child: MyApp() ,);
   }
 }
@@ -42,7 +46,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const Example1(),
-      home: const ListExample(),
+      // home: const ListExample(),
+      // home: const ListExample2(),
+      home: const ExampleServer(),
     );
   }
 }
