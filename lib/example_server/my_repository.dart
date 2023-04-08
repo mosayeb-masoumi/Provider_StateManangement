@@ -1,18 +1,8 @@
-// abstract class MyRepository{
-//   Future<dynamic> getData();
-// }
-//
-// class IMyRepository extends MyRepository{
-//   @override
-//   Future getData() async {
-//     await Future.delayed(const Duration(seconds: 2));
-//     List<String> list = ["item1" , "item2" ,"item3"];
-//     return list;
-//   }
-//
-// }
+abstract class MyRepository{
+  Future<dynamic> getData();
+}
 
-class MyRepository {
+class IMyRepository extends MyRepository{
   @override
   Future getData() async {
     await Future.delayed(const Duration(seconds: 2));
@@ -21,3 +11,13 @@ class MyRepository {
   }
 
 }
+
+// class MyRepository {
+//   @override
+//   Future getData() async {
+//     await Future.delayed(const Duration(seconds: 2));
+//     List<String> list = ["item1" , "item2" ,"item3"];
+//     return list;
+//   }
+//
+// }

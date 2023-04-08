@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_example/di.dart';
 import 'package:provider_example/example1/example1.dart';
 
 import 'package:provider/provider.dart';
@@ -12,6 +13,7 @@ import 'package:provider_example/providers/shopping_card_provider.dart';
 
 void main() {
 
+  setUpDI(); // to set get_it dependency injection
   runApp(project_providers());
 
 }
@@ -28,7 +30,8 @@ class project_providers extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => Counter()),
       ChangeNotifierProvider(create: (_) => ShoppingCard()),
       ChangeNotifierProvider(create: (_) => ListProvider()),
-      ChangeNotifierProvider(create: (_) => ServerProvider()),
+      ChangeNotifierProvider(create: (_) => ServerProvider(sl())),
+      // ChangeNotifierProvider(create: (_) => ServerProvider()),
     ], child: MyApp() ,);
   }
 }
