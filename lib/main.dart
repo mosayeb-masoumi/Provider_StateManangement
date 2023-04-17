@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider_example/clean_arc_provider/presentation/clean_page.dart';
+import 'package:provider_example/clean_arc_provider/presentation/clean_provider.dart';
 import 'package:provider_example/di.dart';
 import 'package:provider_example/example1/example1.dart';
 
@@ -31,6 +33,7 @@ class project_providers extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => ShoppingCard()),
       ChangeNotifierProvider(create: (_) => ListProvider()),
       ChangeNotifierProvider(create: (_) => ServerProvider(sl())),
+      ChangeNotifierProvider(create: (_) => CleanProvider(sl())),
       // ChangeNotifierProvider(create: (_) => ServerProvider()),
     ], child: MyApp() ,);
   }
@@ -51,7 +54,8 @@ class MyApp extends StatelessWidget {
       // home: const Example1(),
       // home: const ListExample(),
       // home: const ListExample2(),
-      home: const ExampleServer(),
+      // home: const ExampleServer(),
+      home: const CleanPage(),
     );
   }
 }
